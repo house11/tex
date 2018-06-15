@@ -1,0 +1,7 @@
+String key = String.valueOf(pw.getText());
+                    char[] pass = key.toCharArray();
+                    final Key d = AES.key2(pass);
+                    System.out.println("Key: " + d.getEncoded());
+                    final String iv = MD5.md5(d.toString()).substring(16); // vector de inicialización
+                    System.out.println("Key: " + iv);
+                    final String cleartext = String.valueOf(testo.getText());
